@@ -1,0 +1,54 @@
+/* Fuentes gamer */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Press+Start+2P&display=swap');
+
+:root{
+  --bg:#0d0d0d;
+  --neon:#39FF14;
+  --electric:#00FFFF;
+  --fg:#e5e5e5;
+}
+
+html,body,#root{height:100%}
+body{
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Orbitron', system-ui, sans-serif;
+}
+
+/* Brillos y neones */
+.neon-text{ text-shadow: 0 0 6px var(--electric), 0 0 14px var(--electric); }
+.neon-border{ box-shadow: 0 0 8px var(--neon), 0 0 16px rgba(63, 4, 223, 0.4) inset; }
+
+a, .link-neon{
+  color: var(--electric);
+}
+a:hover{ color: var(--neon); }
+
+.navbar-brand{
+  font-family: 'Press Start 2P', monospace;
+  letter-spacing: 1px;
+  color: var(--neon) !important;
+  text-shadow: 0 0 6px var(--neon);
+}
+
+.card{
+  background: #111;
+  border: 1px solid rgba(0,255,255,.12);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 0 12px rgba(7, 114, 114, 0.25);
+}
+
+.btn-neon{
+  background: linear-gradient(90deg, var(--neon), var(--electric));
+  border: none; color:#061b12; font-weight: 700;
+}
+.btn-neon:hover{ filter: brightness(1.1); }
+
+.badge-cart{ background: var(--neon); color:#000; }
+
+footer{
+  border-top: 1px solid rgba(0,255,255,.12);
+}
