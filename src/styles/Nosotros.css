@@ -1,0 +1,3 @@
+.nosotros-page .card { background:#111; }
+.nosotros-page .accordion-item { border:1px solid rgba(0,255,255,.18); }
+.nosotros-page .accordion-button:not(.collapsed){ color: var(--electric); }
