@@ -1,0 +1,75 @@
+/* Sección de productos destacados */
+.home-featured {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Título de la sección */
+.featured-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.featured-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #17a2b8, transparent);
+  border-radius: 2px;
+}
+
+/* Grid de productos destacados */
+.featured-grid {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.featured-grid > div {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .home-featured {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .featured-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .featured-grid > div {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .home-featured {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .featured-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .featured-title::after {
+    width: 80px;
+    height: 2px;
+  }
+}

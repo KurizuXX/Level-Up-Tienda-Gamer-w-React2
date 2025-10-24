@@ -1,0 +1,236 @@
+/* Hero Section */
+.hero-section {
+  margin-top: 56px; /* Espacio para el navbar fijo */
+  position: relative;
+  width: 100%;
+}
+
+/* Image Wrapper */
+.hero-image-wrapper {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.hero-image {
+  height: 600px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+}
+
+/* Overlay oscuro para mejorar legibilidad del texto */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+/* Caption personalizado */
+.hero-section .carousel-caption {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+  text-align: center !important;
+  z-index: 2;
+  width: 90%;
+  max-width: 800px;
+}
+
+.hero-caption {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+  text-align: center !important;
+  z-index: 2;
+  width: 90%;
+  max-width: 800px;
+}
+
+/* Título */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
+  text-align: center !important;
+}
+
+/* Descripción */
+.hero-description {
+  font-size: 1.25rem;
+  color: #f8f9fa;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease-out;
+  text-align: center !important;
+}
+
+/* Botón */
+.hero-button {
+  background: linear-gradient(45deg, #17a2b8, #0d6efd);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1.2s ease-out;
+  box-shadow: 0 4px 15px rgba(23, 162, 184, 0.4);
+}
+
+.hero-button:hover {
+  background: linear-gradient(45deg, #138496, #0b5ed7);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(23, 162, 184, 0.6);
+}
+
+.hero-button:active {
+  transform: translateY(-1px);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Indicadores del carousel */
+.hero-section .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.hero-section .carousel-indicators button.active {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  transform: scale(1.2);
+}
+
+/* Controles del carousel */
+.hero-section .carousel-control-prev-icon,
+.hero-section .carousel-control-next-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(23, 162, 184, 0.7);
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.hero-section .carousel-control-prev:hover .carousel-control-prev-icon,
+.hero-section .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(23, 162, 184, 1);
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .hero-image-wrapper {
+    height: 500px;
+  }
+
+  .hero-image {
+    height: 500px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .hero-button {
+    padding: 0.65rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    margin-top: 56px;
+  }
+
+  .hero-image-wrapper {
+    height: 400px;
+  }
+
+  .hero-image {
+    height: 400px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-image-wrapper {
+    height: 350px;
+  }
+
+  .hero-image {
+    height: 350px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-button {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}

@@ -1,22 +1,44 @@
 import { Link } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap';
+import './ProductCard.css';
 
-export default function ProductCard({p}){
-  const finalPrice = p.discount ? Math.round(p.price * (1 - p.discount)) : p.price;
+export default function ProductCard({product}){
   return (
-    <div className="col">
-      <div className="card h-100">
-        <img src={p.img} className="card-img-top" alt={p.name} />
-        <div className="card-body">
-          <h5 className="card-title neon-text">{p.name}</h5>
-          <p className="card-text small text-secondary">{p.desc}</p>
-          {p.discount ? (
-            <p className="mb-2"><span className="text-decoration-line-through me-2 text-muted">${p.price.toLocaleString('es-CL')}</span><strong className="text-info">${finalPrice.toLocaleString('es-CL')}</strong></p>
-          ) : (
-            <p className="mb-2"><strong>${p.price.toLocaleString('es-CL')}</strong></p>
-          )}
-          <Link to={`/productos/${p.id}`} className="btn btn-sm btn-outline-info">Ver detalle</Link>
+    <Card className="product-card">
+      <div className="product-image-wrapper">
+        <Card.Img variant="top" src={product.img} alt={product.name} className="product-image" />
+        <div className="product-overlay">
+          <Button 
+            as={Link} 
+            to={`/productos/${product.id}`} 
+            variant="info"
+            className="product-quick-view"
+          >
+            Ver más
+          </Button>
         </div>
       </div>
-    </div>
+
+      <Card.Body className="product-body">
+        <Card.Title className="product-title">{product.name}</Card.Title>
+        <Card.Text className="product-desc">{product.desc}</Card.Text>
+        <div className="product-footer">
+          <div className="product-price-group">
+            <strong className="price-normal">${product.price.toLocaleString('es-CL')}</strong>
+          </div>
+          <Button 
+            as={Link} 
+            to={`/productos/${product.id}`} 
+            variant="outline-info"
+            size="sm"
+            className="product-button"
+          >
+            Detalle
+          </Button>
+        </div>
+      </Card.Body>
+
+
+    </Card>
   );
 }

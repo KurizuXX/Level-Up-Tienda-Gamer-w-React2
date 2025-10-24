@@ -1,0 +1,124 @@
+/* Página de Ofertas */
+.ofertas-page {
+  min-height: 100vh;
+}
+
+/* Contenido */
+.ofertas-content {
+  padding: 3rem 0;
+}
+
+/* Contador */
+.ofertas-counter {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(0, 255, 255, 0.1));
+  border-radius: 15px;
+  border: 2px solid rgba(255, 68, 68, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.counter-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ff4444;
+  text-shadow: 0 0 10px #ff4444;
+}
+
+.counter-text {
+  font-size: 1.25rem;
+  color: #00ffff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Grid de productos */
+.ofertas-grid {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.ofertas-grid > div {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Estado vacío */
+.ofertas-empty {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #666;
+}
+
+.empty-icon {
+  font-size: 5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  opacity: 0.5;
+}
+
+.ofertas-empty h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.ofertas-empty p {
+  font-size: 1.1rem;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .counter-number {
+    font-size: 2.5rem;
+  }
+
+  .counter-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ofertas-counter {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .counter-number {
+    font-size: 2rem;
+  }
+
+  .counter-text {
+    font-size: 1rem;
+  }
+
+  .ofertas-content {
+    padding: 2rem 0;
+  }
+
+  .ofertas-empty {
+    padding: 3rem 1rem;
+  }
+
+  .empty-icon {
+    font-size: 3.5rem;
+  }
+
+  .ofertas-empty h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ofertas-grid > div {
+    margin-bottom: 1rem;
+  }
+}

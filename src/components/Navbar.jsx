@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Navbar as BSNavbar, Container, Nav, Badge, Button } from 'react-bootstrap';
 import { STORAGE_KEYS, getStored, clearSession } from '../utils/storage';
 import { FaShoppingCart, FaUserCircle, FaSignOutAlt } from 'react-icons/fa';
-import './Navbar.css';
+import '../styles/Navbar.css';
 
 export default function Navbar(){
   const navigate = useNavigate();

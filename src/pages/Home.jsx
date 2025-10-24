@@ -1,18 +1,29 @@
 import { getFeatured } from '../data/products';
 import ProductCard from '../components/ProductCard';
+import Hero from '../components/Hero';
+import { Container, Row, Col } from 'react-bootstrap';
+import '../styles/Home.css';
 
 export default function Home(){
   const featured = getFeatured();
   return (
-    <div className="py-4">
-      <div className="p-4 mb-4 neon-border rounded-3 text-center">
-        <h1 className="display-6 neon-text">Bienvenid@ a Level-up Gamer</h1>
-        <p className="text-secondary">Equipos, accesorios y juegos con vibra neón.</p>
-      </div>
-      <h3 className="mb-3">Destacados</h3>
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {featured.map(p => <ProductCard key={p.id} p={p}/>) }
-      </div>
-    </div>
+    <>
+      <Hero />
+
+      {/* DESTACADOS */}
+      <Container className="home-featured">
+        <h3 className="featured-title">Productos Destacados</h3>
+        <Row xs={1} sm={2} md={3} className="featured-grid">
+
+          {featured.map(product => (
+            <Col key={product.id}>
+              <ProductCard product={product}/>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+
+    </>
   );
 }

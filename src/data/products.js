@@ -61,7 +61,8 @@ export const PRODUCTS = [
         price: 549990,
         category: 'consolas',
         img: imgPS5,
-        desc: 'Nueva generación de Sony.'
+        desc: 'Nueva generación de Sony.',
+        featured: true
     },
     {
         id: 6,
@@ -69,7 +70,8 @@ export const PRODUCTS = [
         price: 1299990,
         category: 'computadores',
         img: imgPcAsus,
-        desc: 'Rendimiento alto para juegos exigentes.'
+        desc: 'Rendimiento alto para juegos exigentes.',
+        featured: true
     },
     {
         id: 7,
@@ -77,7 +79,8 @@ export const PRODUCTS = [
         price: 349990,
         category: 'sillas',
         img: imgSecretlab,
-        desc: 'Soporte ergonómico y ajustes finos.'
+        desc: 'Soporte ergonómico y ajustes finos.',
+        featured: true
     },
     {
         id: 8,

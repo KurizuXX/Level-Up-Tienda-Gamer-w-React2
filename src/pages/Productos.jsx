@@ -1,24 +1,47 @@
 import { PRODUCTS } from '../data/products';
 import ProductCard from '../components/ProductCard';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
+import { Container, Row, Col, Form } from 'react-bootstrap';
+import '../styles/Productos.css';
 
 export default function Productos(){
   const [term, setTerm] = useState('');
-  const filtered = useMemo(()=>{
-    const t = term.trim().toLowerCase();
-    if(!t) return PRODUCTS;
-    return PRODUCTS.filter(p => p.name.toLowerCase().includes(t) || p.desc.toLowerCase().includes(t));
-  },[term]);
+  const [filtered, setFiltered] = useState(PRODUCTS);
+
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setTerm(value);
+    
+    const t = value.trim().toLowerCase();
+    if(!t) {
+      setFiltered(PRODUCTS);
+    } else {
+      setFiltered(PRODUCTS.filter(product => 
+        product.name.toLowerCase().includes(t) || 
+        product.desc.toLowerCase().includes(t)
+      ));
+    }
+  };
 
   return (
-    <div className="py-3">
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h2>Productos</h2>
-        <input className="form-control w-auto" placeholder="Buscar" value={term} onChange={e=>setTerm(e.target.value)} />
+    <Container className="productos-page">
+      <div className="productos-header">
+        <h2 className="productos-title">Productos</h2>
+        <Form.Control 
+          type="text"
+          placeholder="Buscar productos..." 
+          value={term} 
+          onChange={handleSearch}
+          className="productos-search"
+        />
       </div>
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {filtered.map(p => <ProductCard key={p.id} p={p}/>) }
-      </div>
-    </div>
+      <Row xs={1} sm={2} md={3} className="productos-grid">
+        {filtered.map(product => (
+          <Col key={product.id}>
+            <ProductCard product={product}/>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 }
