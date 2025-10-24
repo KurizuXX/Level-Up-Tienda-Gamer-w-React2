@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
-import './ProductCard.css';
+import '../styles/ProductCard.css';
 
 export default function ProductCard({product}){
   return (

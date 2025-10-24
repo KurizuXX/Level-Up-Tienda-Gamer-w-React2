@@ -1,5 +1,5 @@
 import { Container, Badge } from 'react-bootstrap';
-import './PromoBanner.css';
+import '../styles/PromoBanner.css';
 
 export default function PromoBanner({ 
   icon: Icon, 

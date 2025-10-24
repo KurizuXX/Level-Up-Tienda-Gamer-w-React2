@@ -3,7 +3,7 @@ import ProductCard from '../components/ProductCard';
 import PromoBanner from '../components/PromoBanner';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaFire, FaTags, FaBolt } from 'react-icons/fa';
-import './Ofertas.css';
+import '../styles/Ofertas.css';
 
 export default function Ofertas(){
   const offers = getOffers();
