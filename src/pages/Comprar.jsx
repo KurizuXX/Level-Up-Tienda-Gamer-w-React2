@@ -61,17 +61,32 @@ export default function Comprar(){
             })}
           </div>
         )}
-      </div>
-      <div className="col-lg-4">
-        <div className="card p-3">
-          <h5 className="mb-3">Resumen</h5>
-          <div className="d-flex justify-content-between"><span>Subtotal</span><span>${totals.subtotal.toLocaleString('es-CL')}</span></div>
-          <div className="d-flex justify-content-between"><span>Envío</span><span>${totals.shipping.toLocaleString('es-CL')}</span></div>
-          <hr/>
-          <div className="d-flex justify-content-between h5"><span>Total</span><span>${totals.total.toLocaleString('es-CL')}</span></div>
-          <button className="btn btn-neon mt-3 w-100" onClick={pagar} disabled={cart.length===0}>Pagar</button>
-        </div>
-      </div>
+</div>
+<div className="col-lg-4">
+  <div className="card p-3 text-white">
+    <h5 className="mb-3">Resumen</h5>
+    <div className="d-flex justify-content-between">
+      <span>Subtotal</span>
+      <span>${totals.subtotal.toLocaleString('es-CL')}</span>
     </div>
+    <div className="d-flex justify-content-between">
+      <span>Envío</span>
+      <span>${totals.shipping.toLocaleString('es-CL')}</span>
+    </div>
+    <hr />
+    <div className="d-flex justify-content-between h5">
+      <span>Total</span>
+      <span>${totals.total.toLocaleString('es-CL')}</span>
+    </div>
+    <button
+      className="btn btn-neon mt-3 w-100"
+      onClick={pagar}
+      disabled={cart.length === 0}
+    >
+      Pagar
+    </button>
+  </div>
+</div>
+</div>
   );
 }
